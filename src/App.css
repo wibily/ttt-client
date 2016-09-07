@@ -1,0 +1,56 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.Game {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.Game__row {
+    display: flex;
+}
+
+.Cell {
+    border: 1px solid black;
+    flex: 1;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.Cell--empty {
+    cursor: pointer;
+}
+
+.Cell--empty:hover {
+    background-color: lightblue;
+}
