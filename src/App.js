@@ -20,10 +20,10 @@ class App extends Component {
     });
   }
 
-  extractMessage(state) {
-    if (state.winner) {
+  static extractMessage(state) {
+    if (state.winner === 1 || state.winner === 2) {
       return `Game won by player ${state.winner}`;
-    } else if (state.draw) {
+    } else if (state.winner === 'draw') {
       return `Game is a Draw`;
     } else if (state.player) {
       return `Player ${state.player}'s turn`;
@@ -40,14 +40,12 @@ class App extends Component {
       contentType : 'application/json',
       type : 'POST'
     }).done((data)=>{
-      this.state = null;
       this.setState(data);
     });
   }
 
   restart(){
     $.get('http://localhost:3001/game/restart', (result)=> {
-      this.state = null;
       this.setState(result);
     });
   }
